@@ -20,3 +20,15 @@ The implementation is kept simple and easy to follow, using the PyTorch library,
 ## Installation
 
 To use the code in this repository, you need to have Python 3 and PyTorch installed. You can install the necessary dependencies by running the following command:
+```shell
+pip install -r requirements.txt
+```
+
+## Usage
+
+Once you have installed the dependencies, you can run the different components of the Transformer model individually. Each component is implemented as a separate Python module and can be executed independently. You can compare the performance of the different blocks and see how it increases as more complexity is added.
+
+## Examples
+
+## License
+This repository is licensed under the MIT License. You are free to use, modify, and distribute the code in this repository as per the terms of the license.
