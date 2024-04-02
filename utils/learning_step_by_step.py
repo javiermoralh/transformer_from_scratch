@@ -99,7 +99,7 @@ class BigramLanguageModel(nn.Module):
             loss = None
         else:
             B, T, C = logits.shape
-            logits = logits.view(B*T, C)  # becasue pytorch cross entropy format
+            logits = logits.view(B*T, C)  # becasue pytorch cross entropy format (view: returns a new tensor with the same data as the self tensor but of a different shape.)
             targets = targets.view(B*T)
             loss = F.cross_entropy(logits, targets)
         return logits, loss
@@ -124,6 +124,7 @@ logits, loss = m(xb, yb)
 print(logits.shape)
 print(loss)
 print(decode(m.generate(idx = torch.zeros((1, 1), dtype=torch.long), max_new_tokens=100)[0].tolist()))
+
 
 optimizer = torch.optim.AdamW(m.parameters(), lr=1e-3)
 batch_size = 32
